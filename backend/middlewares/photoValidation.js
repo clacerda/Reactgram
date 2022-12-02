@@ -17,8 +17,21 @@ const photoInsertValidation = () => {
             return true;
         })
     ]
-}
+};
+
+
+const photoUpdateValidation = () => {
+    return [
+        body("title")
+        .optional()
+        .isString()
+        .withMessage("O título é obrigatório")
+        .isLength({min:5})
+        .withMessage("O título precisa de ao menos 5 caracteres."),
+    ]
+};
 
 module.exports = {
     photoInsertValidation,
+    photoUpdateValidation,
 };
