@@ -1,4 +1,4 @@
-import  './Message.css'
+import  '../components/Message.css';
 
 const Message = ({msg, type}) => {
   return (
