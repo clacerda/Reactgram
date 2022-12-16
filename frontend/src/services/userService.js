@@ -7,11 +7,11 @@ const profile = async(data, token) => {
     try {
         const res = await fetch(api + "/users/profile", config)
                             .then((res) => res.json())
-                            .catch((error) => error);
+                            .catch((err) => err);
         return res;
 
     } catch (error) {
-        
+        console.log(error)
     }
 }
 
