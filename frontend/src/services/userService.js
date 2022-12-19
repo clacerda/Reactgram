@@ -25,14 +25,15 @@ const updateProfile = async(data, token) => {
                     .catch((err) => err);
 
         return res;
-        
+
     } catch (error) {
         console.log(error)
     }
 }
 
 const userService = {
-    profile
+    profile,
+    updateProfile,
 }
 
 export default userService;
