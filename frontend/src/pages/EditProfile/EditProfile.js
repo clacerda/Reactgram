@@ -47,7 +47,7 @@ const EditProfile = () => {
         // Gather user data from states;
 
         const userData = {
-            name
+            name,
         }
         if (profileImage) {
             userData.profileImage = profileImage;
@@ -66,7 +66,7 @@ const EditProfile = () => {
 
         formData.append("user", userFormData);
         
-        await dispatch(updateProfile(userFormData));
+        await dispatch(updateProfile(formData));
 
         setTimeout(() => {
             dispatch(resetMessage())
@@ -83,7 +83,7 @@ const EditProfile = () => {
 
         //update image state
         setProfileImage(image);
-    }
+    };
 
 
   return (
