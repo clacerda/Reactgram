@@ -46,14 +46,14 @@ export const userSlice = createSlice({
             state.loading = true;
             state.error = null;
         })
-          .addCase(updateProfile.fulfilled, (state, action) => {
+        .addCase(updateProfile.fulfilled, (state, action) => {
             state.loading = false;
             state.success = true;
             state.error = null;
             state.user = action.payload;
             state.message = "Usuário atualizado com sucesso!"
         })
-          .addCase(updateProfile.rejected, (state, action) => {
+        .addCase(updateProfile.rejected, (state, action) => { 
             state.loading = false;
             state.error = action.payload;
             state.user = null;
@@ -65,7 +65,7 @@ export const userSlice = createSlice({
 export const updateProfile = createAsyncThunk(
     "user/update",
     async(user, thunkAPI) => {
-        const token = thunkAPI.getState.auth.user.token;
+        const token = thunkAPI.getState().auth.user.token;
         const data = await userService.updateProfile(user, token);
 
         //Check for errors
