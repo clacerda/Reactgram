@@ -36,7 +36,7 @@ const Profile = () => {
 
   return (
     <div id='profile'>
-      <div className='profile-image'>
+      <div className='profile-header'>
           {user.profileImage && (
             <img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />
           )}
